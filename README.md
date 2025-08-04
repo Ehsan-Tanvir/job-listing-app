@@ -114,17 +114,7 @@ By default, the backend runs on:
 
 ---
 
-### 4. Scrape Job Listings
-
-```bash
-python3 scraper/scrape.py
-```
-
-This will populate the database with current jobs from actuarylist.com.
-
----
-
-### 5. Start Frontend
+### 4. Start Frontend
 
 In another terminal:
 
@@ -141,9 +131,9 @@ Frontend runs by default on:
 
 ## 📌 Notes
 
+* Just run the app — the database table will be created automatically no setup required.
+* The /scrape POST endpoint runs the integrated scraper with a specified number of pages and automatically stores the scraped job data into the database.
 * Ensure ChromeDriver matches your Chrome version.
 * If using a `.env` file for credentials, make sure it's included in `.gitignore`.
-* If you're editing jobs, the same form used for adding is reused dynamically.
-* Filtering and sorting are fully dynamic — no full page reloads needed.
 
 ---
