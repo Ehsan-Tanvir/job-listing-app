@@ -2,6 +2,7 @@ from db import db
 from datetime import date
 from sqlalchemy.dialects.postgresql import ARRAY
 
+
 class Job(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), nullable=False)
@@ -20,10 +21,10 @@ class Job(db.Model):
             "company": self.company,
             "country": self.country,
             "city": self.city,
-            "posted_date": self.posted_date.strftime('%Y-%m-%d'),
+            "posted_date": self.posted_date.strftime("%Y-%m-%d"),
             "job_type": self.job_type,
             "tags": self.tags,
-            "link": self.link
+            "link": self.link,
         }
 
 
