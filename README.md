@@ -10,15 +10,16 @@ This tool is especially helpful for actuaries and job seekers to explore listing
 
 ## ✨ Features
 
-* 🔎 **Job Filtering**: Filter by location and job type.
-* 🔄 **Sorting**: Sort listings by posting date.
-* ➕ **Add Jobs**: Add jobs manually via the frontend.
-* 📝 **Edit Jobs**: Inline editing right on the job cards.
-* ❌ **Delete Jobs**: One-click job deletion.
-* 🔗 **Scraper**: Pulls fresh job listings using Selenium.
-* 📦 **Persistent Storage**: Powered by PostgreSQL.
-* ⚡ **Responsive UI**: Clean, functional interface with plain CSS.
-
+**Job Filtering**: Filter Jobs by their Company, Country, Type and Tags.
+**Sorting**: Sort Jobs by posting date (Oldest & Newest).
+**Add Jobs**: User can Add a Job.
+**Edit Jobs**: User can Edit any Job.
+**Delete Jobs**: User can Delete any Job.
+**Scraper**: Pulls fresh job listings using Selenium based on user input.
+**Persistent Storage**: PostgreSQL as Database.
+**Responsive UI**: Clean, Functional, Responsive and Dynamic User Inteface.
+**Reset Filters**: Reset all applied filters with a single click of the "Reset Filters" button..
+**More Job Information**: View detailed information about any job by clicking the "More Info" button on its card.
 ---
 
 ## 🛠️ Tech Stack
@@ -28,31 +29,51 @@ This tool is especially helpful for actuaries and job seekers to explore listing
 | Frontend | React (with plain CSS)           |
 | Backend  | Flask + SQLAlchemy               |
 | Database | PostgreSQL                       |
-| Scraper  | Python + Selenium                |
-| Misc     | Virtual Environment, RESTful API |
+| Scraper  | Python + Selenium + BeautifulSoup|
 
 ---
 
-## 📁 Abstract Folder Structure
+## 📁 Folder Structure
 
 ```
 job-listing-app/
 │
-├── backend/           # Flask app and models
-│   └── app.py
+├── backend/                         # Flask backend
+│   ├── models/                       # Database models
+│   │   └── job.py                     # Job table model
+│   │
+│   ├── routes/                       # API route handlers
+│   │   └── job_routes.py              # Job CRUD routes
+│   │
+│   ├── app.py                        # Flask app entry
+│   ├── config.py                     # App configuration
+│   ├── db.py                         # Database setup
+│   └── .env                          # Environment variables
 │
-├── scraper/           # Selenium scraper
-│   └── scrape.py
-│
-├── frontend/          # React frontend
+├── frontend/                         # React frontend
 │   └── src/
-│       ├── components/
+│       ├── components/               # UI components
+│       │   ├── ConfirmDeleteModal.js  # Delete confirm dialog
+│       │   ├── FilterSortJob.js       # Filter/sort jobs UI
+│       │   ├── JobCard.js             # Single job display
+│       │   ├── JobForm.js             # Job form fields
+│       │   ├── JobFormModal.js        # Job form popup
+│       │   ├── JobList.js             # List of jobs
+│       │   └── ScrapeModal.js         # Scraper trigger popup
+│       │
+│       ├── api.js                    # API calls helper
+│       ├── App.js                    # Main React app
+│       ├── index.css                 # Global styles
+│       └── index.js                  # React entry point
 │
-├── venv/              # Python virtual environment (gitignored)
+├── scraper/                          # Job scraper
+│   └── scrape.py                     # Selenium scraping script
 │
-├── requirements.txt   # Python dependencies
-├── .gitignore         # Ignores venv, pyc
-└── README.md          # You're reading it now
+├── venv/                             # Python virtual env
+├── .gitignore                        # Ignore rules
+├── README.md                         # Project documentation
+└── requirements.txt                  # Python dependencies
+
 ```
 
 ---
@@ -131,9 +152,6 @@ Frontend runs by default on:
 
 ## 📌 Notes
 
-* Just run the app — the database table will be created automatically no setup required.
-* The /scrape POST endpoint runs the integrated scraper with a specified number of pages and automatically stores the scraped job data into the database.
-* Ensure ChromeDriver matches your Chrome version.
-* If using a `.env` file for credentials, make sure it's included in `.gitignore`.
-
+* Just run the app — the database table will be created automatically no manual setup required.
+* The /scrape POST endpoint runs the integrated scraper with a specified number of pages and automatically stores the scraped job data into the database (no manual file execution required).
 ---

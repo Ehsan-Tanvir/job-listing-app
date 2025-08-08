@@ -19,7 +19,6 @@ export const addJob = async (job) => {
   const data = await response.json();
 
   if (!response.ok) {
-    // Throw to trigger catch in App.js
     const error = new Error(data.error || "Failed to add job");
     error.response = { data };
     throw error;

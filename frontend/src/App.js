@@ -46,7 +46,7 @@ const App = () => {
         await updateJob(editingJob.id, job);
         alert("Job updated successfully!");
       } else {
-        await addJob(job); // <- expect job as an array here if backend expects list
+        await addJob(job);
         alert("Job added successfully!");
       }
       setEditingJob(null);
