@@ -110,6 +110,7 @@ for page in range(num_pages):
                 else "N/A"
             )
 
+            # Default Job_Type is Full-Time
             tags = job.find("div", class_="Job_job-card__tags__zfriA")
             tags = tags.find_all("a") if tags else []
             tags = [tag.text.strip() for tag in tags]

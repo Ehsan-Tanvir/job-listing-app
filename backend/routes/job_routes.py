@@ -88,16 +88,16 @@ def list_jobs():
 
     # Filtering
     job_type = request.args.get("job_type")
+    company = request.args.get("company")
     country = request.args.get("country")
-    city = request.args.get("city")
     tags = request.args.get("tags")
 
     if job_type:
         query = query.filter_by(job_type=job_type)
     if country:
         query = query.filter_by(country=country)
-    if city:
-        query = query.filter_by(city=city)
+    if company:
+        query = query.filter_by(company=company)
     if tags:
         tag_list = [tag.strip() for tag in tags.split(",")]
         for tag in tag_list:
