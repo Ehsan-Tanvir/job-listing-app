@@ -138,7 +138,16 @@ const App = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onSubmit={handleAddOrEdit}
-        initialData={editingJob}
+        initialData={
+          editingJob
+            ? {
+                ...editingJob,
+                tags: Array.isArray(editingJob.tags)
+                  ? editingJob.tags.join(", ")
+                  : editingJob.tags || "",
+              }
+            : {}
+        }
       />
 
       <ConfirmDeleteModal
