@@ -10,16 +10,16 @@ This tool is especially helpful for actuaries and job seekers to explore listing
 
 ## ✨ Features
 
-**Job Filtering**: Filter Jobs by their Company, Country, Type and Tags.
-**Sorting**: Sort Jobs by posting date (Oldest & Newest).
-**Add Jobs**: User can Add a Job.
-**Edit Jobs**: User can Edit any Job.
-**Delete Jobs**: User can Delete any Job.
-**Scraper**: Pulls fresh job listings using Selenium based on user input.
-**Persistent Storage**: PostgreSQL as Database.
-**Responsive UI**: Clean, Functional, Responsive and Dynamic User Inteface.
-**Reset Filters**: Reset all applied filters with a single click of the "Reset Filters" button..
-**More Job Information**: View detailed information about any job by clicking the "More Info" button on its card.
+- **Job Filtering**: Filter Jobs by their Company, Country, Type and Tags.
+- **Sorting**: Sort Jobs by posting date (Oldest & Newest).
+- **Add Jobs**: User can Add a Job.
+- **Edit Jobs**: User can Edit any Job.
+- **Delete Jobs**: User can Delete any Job.
+- **Scraper**: Pulls fresh job listings using Selenium based on user input.
+- **Persistent Storage**: PostgreSQL as Database.
+- **Responsive UI**: Clean, Functional, Responsive and Dynamic User Inteface.
+- **Reset Filters**: Reset all applied filters with a single click of the "Reset Filters" button..
+- **More Job Information**: View detailed information about any job by clicking the "More Info" button on its card.
 ---
 
 ## 🛠️ Tech Stack
