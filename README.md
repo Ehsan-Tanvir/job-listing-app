@@ -125,7 +125,7 @@ CREATE DATABASE joblistings;
 \q
 ```
 
-### 3. Install Backend Requirements
+### 4. Install Backend Requirements
 
 ```bash
 pip install -r requirements.txt
@@ -150,7 +150,7 @@ By default, the backend runs on:
 
 ---
 
-### 4. Start Frontend
+### 5. Start Frontend
 
 In another terminal:
 
