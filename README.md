@@ -84,7 +84,7 @@ job-listing-app/
 
 * Python 3.10+
 * Node.js (v18+ recommended)
-* PostgreSQL (ensure it's running locally [pgadmin])
+* PostgreSQL (ensure it's installed and running locally — default username is usually `postgres`)
 * Git
 * Selenium WebDriver (e.g. ChromeDriver installed and added to PATH)
 
@@ -109,6 +109,21 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 ```
 
 ---
+
+### 3. Create PostgreSQL Database
+
+Before running the backend, make sure the `joblistings` database exists in PostgreSQL.
+
+**Option 1: Using the terminal**
+```bash
+sudo -u postgres createdb joblistings
+```
+**Option 2: Using the psql**
+```bash
+sudo -u postgres psql
+CREATE DATABASE joblistings;
+\q
+```
 
 ### 3. Install Backend Requirements
 
@@ -152,6 +167,7 @@ Frontend runs by default on:
 
 ## 📌 Notes
 
-* Just run the app — the database table will be created automatically no manual setup required.
+* The database **tables** will be created automatically when you run the backend.
+* The PostgreSQL **database itself** (`joblistings`) must be created manually before starting the backend (see step **3. Create PostgreSQL Database** above).
 * The /scrape POST endpoint runs the integrated scraper with a specified number of pages and automatically stores the scraped job data into the database (no manual file execution required).
 ---
